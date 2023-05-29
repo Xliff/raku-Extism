@@ -1,0 +1,7 @@
+prefix=Extism
+modules=Extism::Raw::Types
+backups=backup,bitbucket,google-backup,azure-backupm,hut
+build_exclude=
+lib=extism
+include_directory=/usr/local/include
+exec=raku
