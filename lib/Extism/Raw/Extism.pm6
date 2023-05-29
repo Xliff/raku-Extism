@@ -4,6 +4,8 @@ use v6.c;
 
 use NativeCall;
 
+use Extism::Raw::Definitions;
+
 unit package Extism::Raw::Extism;
 
 sub extism_current_plugin_memory (ExtismCurrentPlugin $plugin)
@@ -51,14 +53,14 @@ sub extism_function_new (
   ExtismSize            $n_outputs,
                         &func (
                           ExtismCurrentPlugin $plugin,
-                          CArray[ExtismVal]   $inputs,
-                          ExtismSize          $n_inputs,
-                          CArray[ExtismVal]   $outputs,
-                          ExtismSize          $n_outputs,
-                          gpointer            $data
+                          CArray[ExtismVal]   $i,
+                          ExtismSize          $n_i,
+                          CArray[ExtismVal]   $o,
+                          ExtismSize          $n_o,
+                          Pointer             $data
                         ),
   Pointer               $user_data,
-                        &free_user_data (gpointer)
+                        &free_user_data (Pointer)
 )
   returns ExtismFunction
   is      native(extism)

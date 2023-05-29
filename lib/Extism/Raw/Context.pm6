@@ -100,7 +100,7 @@ sub extism_plugin_output_data (
   ExtismContext $ctx,
   ExtismPlugin  $plugin
 )
-  returns constuint8
+  returns CArray[uint8]
   is      native(extism)
   is      export
 { * }
